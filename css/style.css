@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  padding: 2vw;
+  min-height: 100vh;
+  color: #519975;
+  background: rgb(3, 0, 17);
+  font-family: cursor, monospace;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 4vw;
+  /* Adjust the font size for the banner section */
+}
+
+img {
+  max-width: 20rem;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+@media screen and (min-width: 767px) {
+  img {
+    width: 15rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 5vw;
+  }
+
+  .glass-container {
+    border-radius: 0;
+    /* Remove border-radius for smaller screens */
+  }
+
+  .glass-container::before {
+    border-radius: 0;
+    /* Remove border-radius for pseudo-element */
+  }
+
+  h1 {
+    font-size: 6vw;
+    /* Adjust font size for smaller screens */
+  }
+}
+
+::selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+
+textarea {
+  left: -1000px;
+  position: absolute;
+}
+
+b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Cursor Start */
+.cursor {
+  font-size: 12px;
+  color: #73ABAD;
+  background-color: #73ABAD;
+  position: relative;
+  opacity: 1;
+  height: 1.5em;
+  width: 10px;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#command {
+  cursor: text;
+  height: 50px;
+  color: #73ABAD;
+}
+
+@media screen and (max-width: 767px) {
+
+  /* Styles for screens smaller than 768px (common for mobile devices) */
+  #terminal,
+  #command {
+    display: none;
+    /* Hide the terminal and command elements on small screens */
+  }
+
+  #mobileMessage {
+    display: block;
+    /* Show the mobile message on small screens */
+  }
+
+  #desktopMessage {
+    display: none;
+    /* Hide the desktop message on small screens */
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  /* Styles for screens 768px and larger (desktop computers) */
+  #mobileMessage {
+    display: none;
+    /* Hide the mobile message on larger screens */
+  }
+}
+
+#desktopMessage {
+  display: block;
+  /* Show the desktop message on larger screens */
+}
+
+#liner {
+  line-height: 1.3em;
+  margin-top: -2px;
+  animation: show 0.5s ease forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+#liner::before {
+  color: #519975;
+  content: "visitor@falcon98.com:~$";
+}
+
+#liner.password::before {
+  content: "Password:";
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Cursor End */
+p {
+  display: block;
+  line-height: 1.3em;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.05em;
+  animation: typing 0.5s steps(30, end);
+}
+
+.no-animation {
+  animation: typing 0 steps(30, end);
+}
+
+.margin {
+  margin-left: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.index {
+  color: #DCDCCC;
+}
+
+.color2 {
+  color: #B89076;
+}
+
+.command {
+  color: #73ABAD;
+  text-shadow: 0 0 5px #73ABAD;
+}
+
+.error {
+  color: #B89076;
+}
+
+.white {
+  color: #fff;
+}
+
+.inherit,
+a {
+  color: #9C8394;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+a:hover {
+  background: #73ABAD;
+  color: #211830;
+  cursor: pointer;
+}
+
+a:focus {
+  outline: 0;
+}

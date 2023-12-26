@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon 98 - Technology Services Provider</title>
+  <link rel="shortcut icon" href="assets\Falcon 98 - logo Re Design.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ9TR5T9S2"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Falcon98 | Terminal</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link rel="icon" type="image/x-icon" href="assets/Falcon 98 - logo Re Design.png" />
+</head>
+
+<body>
+  <div><a href="https://falcon98.com/">
+    <img class="glass-image" src="assets\Falcon 98 - logo Re Design.png" alt="Glass Image">
+  </a>
+    <div>
+      <div id="mobileMessage">
+        <span>This application is best viewed on a laptop or computer. Please switch to a larger screen for the best
+          experience.</span>
+        </p>
+      </div>
+      <div id="desktopMessage"></div>
+    </div>
+    <div id="terminal">
+      <a id="before"></a>
+    </div>
+      <div id="command" onclick="$('texter').focus();">
+        <textarea type="text" id="texter" onkeyup="typeIt(this, event)" onkeydown="typeIt(this, event); moveIt(this.value.length, event)" onkeypress="typeIt(this, event);"></textarea>
+        <div id="liner">
+          <span id="typer"></span><b class="cursor" id="cursor" style="left: 0px;">█</b>
+        </div>
+      </div>
+  </div>
+  <script src="js/caret.js"></script>
+  <script src="js/commands.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
