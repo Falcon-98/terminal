@@ -17,11 +17,15 @@ var pwebsite = 'https://ashenwijesingha.github.io';
 
 var prgQRCode = "https://ashenwijesingha.github.io/QR-Code-Generator/";
 
+var qr = "https://ashenwijesingha.github.io/QR-Code-Generator/";
+
 
 
 whois = [
+  "<span class=\"text-container\">",
   "<br>",
   "Hey, I'm Falocon98!👋",
+  "<br>",
   "Falcon 98 is a pioneering technology services provider, dedicated to guiding businesses through the intricacies of the digital era.",
   "Our commitment to innovation, coupled with a focus on excellence and customer satisfaction, sets us apart. We seamlessly integrate",
   "cutting-edge technology with industry expertise to empower organizations for success. Recognizing the importance of a holistic approach,",
@@ -30,7 +34,8 @@ whois = [
   "solutions but also strategic insights. We remain at the forefront of industry trends through continuous investment in research and",
   "development, offering clients the latest innovations to stay ahead in their markets. Falcon 98 invites businesses to collaborate in",
   "the pursuit of digital excellence, providing the tools and strategies necessary for success in today's fast-paced technological landscape.",
-  "<br>"
+  "<br>",
+  "</span>"
 ];
 
 whoami = [

@@ -66,6 +66,17 @@ img {
   background-color: #519975;
 }
 
+.text-container {
+  max-width: 800px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .text-container {
+    padding: 10px;
+  }
+}
+
 textarea {
   left: -1000px;
   position: absolute;

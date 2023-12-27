@@ -78,6 +78,7 @@ function enterKey(e) {
 }
 
 function commander(cmd) {
+  cmd = cmd.replace(/\s/g, "");
   switch (cmd.toLowerCase()) {
     case "help":
       loopLines(help, "color2 margin", 80);
@@ -94,9 +95,14 @@ function commander(cmd) {
       break;
     case "sudo":
       addLine("Oh no, you're not admin...", "color2", 80);
-      setTimeout(function() {
-        window.open('#');
+      setTimeout(function () {
+        window.open("#");
       }, 1000);
+      break;
+    case "qr":
+      // loopLines(qr, "color2 margin", 80);
+      addLine("Opening QR Code Generator ...", "color2", 80);
+      newTab(qr);
       break;
     case "social":
       loopLines(social, "color2 margin", 80);
@@ -109,7 +115,11 @@ function commander(cmd) {
       loopLines(projects, "color2 margin", 80);
       break;
     case "password":
-      addLine("<span class=\"inherit\"> Lol! You're joking, right? You\'re gonna have to try harder than that!😂</span>", "error", 100);
+      addLine(
+        "<span class=\"inherit\"> Lol! You're joking, right? You're gonna have to try harder than that!😂</span>",
+        "error",
+        100
+      );
       break;
     case "history":
       addLine("<br>", "", 0);
@@ -117,11 +127,15 @@ function commander(cmd) {
       addLine("<br>", "command", 80 * commands.length + 50);
       break;
     case "email":
-      addLine('Opening mailto >>> <a href="mailto:terminal@falcon98.com">terminal@falcon98.com</a>...', "color2", 80);
+      addLine(
+        'Opening mailto >>> <a href="mailto:terminal@falcon98.com">terminal@falcon98.com</a>...',
+        "color2",
+        80
+      );
       newTab(email);
       break;
     case "clear":
-      setTimeout(function() {
+      setTimeout(function () {
         terminal.innerHTML = '<a id="before"></a>';
         before = document.getElementById("before");
       }, 1);
@@ -157,12 +171,28 @@ function commander(cmd) {
     case "":
       break;
     case "Q":
-      addLine("<span class=\"inherit\">What would you like to ask?</span>", "error", 100);
-      addLine('<span class=\"inherit\">If you need any help, please enter </span> <span class="command">\'help -qna\'</span>', "error", 100);
+      addLine(
+        '<span class="inherit">What would you like to ask?</span>',
+        "error",
+        100
+      );
+      addLine(
+        '<span class="inherit">If you need any help, please enter </span> <span class="command">\'help -qna\'</span>',
+        "error",
+        100
+      );
       break;
     case "q":
-      addLine("<span class=\"inherit\">What would you like to ask?</span>", "error", 100);
-      addLine('<span class=\"inherit\">If you need any help, please enter </span> <span class="command">\'help -qna\'</span>', "error", 100);
+      addLine(
+        '<span class="inherit">What would you like to ask?</span>',
+        "error",
+        100
+      );
+      addLine(
+        '<span class="inherit">If you need any help, please enter </span> <span class="command">\'help -qna\'</span>',
+        "error",
+        100
+      );
       break;
     case "help -qna":
       loopLines(helpqna, "color2 margin", 80);
@@ -171,7 +201,11 @@ function commander(cmd) {
       loopLines(contact, "color2 margin", 80);
       break;
     default:
-      addLine("<span class=\"inherit\">Command not found. For a list of commands, type <span class=\"command\">'help'</span>.</span>", "error", 100);
+      addLine(
+        '<span class="inherit">Command not found. For a list of commands, type <span class="command">\'help\'</span>.</span>',
+        "error",
+        100
+      );
       break;
   }
 }
@@ -208,3 +242,5 @@ function loopLines(name, style, time) {
     addLine(item, style, index * time);
   });
 }
+
+
