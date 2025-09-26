@@ -95,8 +95,8 @@ body {
   padding: 16px;
   overflow-y: auto;
   background: #0d1117;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* Terminal Output */
@@ -217,7 +217,7 @@ textarea {
   }
 
   .terminal-content {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .logo-section {
