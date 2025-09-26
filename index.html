@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminal | Falcon 98</title>
+  <title>Falcon 98 Terminal</title>
   <link rel="shortcut icon" href="assets/Falcon 98 - logo Re Design.png">
   <meta name="description" content="Falcon 98 provides cutting-edge technology services to enhance your business. Explore our terminal for innovative solutions.">
   <meta name="keywords" content="technology services, Falcon 98, terminal, innovation, business solutions">
   <meta name="author" content="Falcon 98 by Ashen Wijesingha">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://terminal.falcon98.com/">
+
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Falcon98 | Terminal">
   <meta property="og:description" content="Explore Falcon 98's terminal for innovative technology solutions.">
   <meta property="og:image" content="assets/Falcon 98 - logo Re Design.png">
   <meta property="og:url" content="https://terminal.falcon98.com/">
+  <meta property="og:type" content="website">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ9TR5T9S2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,34 +26,80 @@
     gtag('js', new Date());
     gtag('config', 'G-QJ9TR5T9S2');
   </script>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
 </head>
 
 <body>
-  <div><a href="https://falcon98.com/">
-    <img class="glass-image" src="assets/Falcon 98 - logo Re Design.png" alt="Falcon 98 Logo">
-  </a>
-    <div>
-      <div id="mobileMessage">
-        <span>This application is best viewed on a laptop or computer. Please switch to a larger screen for the best
-          experience.</span>
+  <!-- Terminal Window -->
+  <div class="terminal-window">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="window-controls">
+        <div class="control close"></div>
+        <div class="control minimize"></div>
+        <div class="control maximize"></div>
       </div>
-      <div id="desktopMessage"></div>
+      <div class="terminal-title">falcon98@terminal: ~</div>
+      <div></div>
     </div>
-    <div id="terminal">
-      <a id="before"></a>
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <a href="https://falcon98.com/" target="_blank">
+        <img src="assets/Falcon 98 - logo Re Design.png" alt="Falcon 98 Logo">
+      </a>
+      <h1>Falcon 98 Terminal</h1>
+      <div class="subtitle">Web-based interactive terminal interface</div>
     </div>
-      <div id="command" onclick="$('texter').focus();">
-        <textarea type="text" id="texter" aria-label="Terminal input" onkeyup="typeIt(this, event)" onkeydown="typeIt(this, event); moveIt(this.value.length, event)" onkeypress="typeIt(this, event);"></textarea>
-        <div id="liner">
-          <span id="typer"></span><b class="cursor" id="cursor" style="left: 0px;">█</b>
+
+    <!-- Mobile Message -->
+    <div class="mobile-message">
+      <p>⚠️ This terminal interface works best on desktop or tablet devices.</p>
+      <p>Please use a larger screen for the optimal experience.</p>
+    </div>
+
+    <!-- Terminal Content -->
+    <div class="terminal-content">
+      <div id="terminal">
+        <div id="before"></div>
+      </div>
+
+      <!-- Command Input Area -->
+      <div class="input-area">
+        <span class="prompt" id="prompt">visitor@falcon98:~$</span>
+        <div id="command-container" style="position: relative; flex: 1;">
+          <span id="typer"></span>
+          <span class="cursor" id="cursor">█</span>
         </div>
+        <textarea
+          id="texter"
+          aria-label="Terminal command input"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false">
+        </textarea>
       </div>
+    </div>
   </div>
+
+  <!-- JavaScript Files -->
   <script src="js/caret.js"></script>
   <script src="js/commands.js"></script>
   <script src="js/main.js"></script>
-</body>
 
+  <script>
+    // Auto-focus on the terminal when page loads
+    window.addEventListener('load', function() {
+      document.getElementById('texter').focus();
+    });
+
+    // Keep focus on terminal when clicking anywhere
+    document.addEventListener('click', function() {
+      document.getElementById('texter').focus();
+    });
+  </script>
+</body>
 </html>

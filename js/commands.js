@@ -1,12 +1,14 @@
+// Social Links and Contact Information
 var youtube = "#";
 var twitter = "#";
-var password = "Huh You got me dude ⛺";
+var password = "falcon98";
 var linkedin = "https://www.linkedin.com/in/ashen-wijesingha/";
 var instagram = "https://www.instagram.com/ashen_wijesingha/";
 var github = "https://github.com/Falcon-98";
 var email = 'mailto:terminal@falcon98.com';
 var website = "https://falcon98.com/";
 
+// Personal Links
 var pfacebook = "https://www.facebook.com/ashen.dilshan.96/";
 var plinkedin = "https://www.linkedin.com/in/ashen-wijesingha/";
 var pinstagram = "https://www.instagram.com/ashen_wijesingha/";
@@ -15,119 +17,318 @@ var pemail = 'mailto:inbox.ashen@gmail.com';
 var pcontact = 'tel:+94784464128';
 var pwebsite = 'https://ashenwijesingha.github.io';
 
-var prgQRCode = "https://ashenwijesingha.github.io/QR-Code-Generator/";
-
+// Project Links
 var qr = "https://ashenwijesingha.github.io/QR-Code-Generator/";
 
-
-
-whois = [
-  "<span class=\"text-container\">",
-  "<br>",
-  "Hey, I'm Falocon98!👋",
-  "<br>",
-  "Falcon 98 is a pioneering technology services provider, dedicated to guiding businesses through the intricacies of the digital era.",
-  "Our commitment to innovation, coupled with a focus on excellence and customer satisfaction, sets us apart. We seamlessly integrate",
-  "cutting-edge technology with industry expertise to empower organizations for success. Recognizing the importance of a holistic approach,",
-  "our seasoned professionals offer tailored solutions, considering the unique challenges and goals of each client. At the core of our",
-  "values is a dedication to fostering lasting partnerships, ensuring that our clients receive not only state-of-the-art technology",
-  "solutions but also strategic insights. We remain at the forefront of industry trends through continuous investment in research and",
-  "development, offering clients the latest innovations to stay ahead in their markets. Falcon 98 invites businesses to collaborate in",
-  "the pursuit of digital excellence, providing the tools and strategies necessary for success in today's fast-paced technological landscape.",
-  "<br>",
-  "</span>"
-];
-
-whoami = [
-  "<br>",
-  "The paradox of “Who am I?” is: we never know, but, we constantly find out.",
-  "<br>"
-];
-
-social = [
-  "<br>",
-  'youtube        <a href="' + youtube + '" target="_blank">youtube/falcon98' + "</a>",
-  'twitter        <a href="' + twitter + '" target="_blank">twitter/falcon98' + '</a>',
-  'linkedin       <a href="' + linkedin + '" target="_blank">linkedin/falcon98' + "</a>",
-  'instagram      <a href="' + instagram + '" target="_blank">instagram/falcon98' + '</a>',
-  'github         <a href="' + github + '" target="_blank">github/falcon98' + "</a>",
-  'website        <a href="' + website + '" target="_blank">falcon98.com' + "</a>",
-  "<br>"
-];
-
-secret = [
-  "<br>",
-  '<span class="command">sudo</span>           Only use if you\'re admin',
-  "<br>"
-];
-
-projects = [
-  "<br>",
-  'QR Code Generator       <a href="' + prgQRCode + '" target="_blank">QR Code Generator' + "</a>",
-  "Still curating... most projects are offline, on GitHub, or confidential. 🫂",
-  "<br>"
-];
-
-help = [
-  "<br>",
-  '<span class="command">whois</span>          Who is Falcon 98?',
-  '<span class="command">whoami</span>         Who are you?',
-  '<span class="command">social</span>         Display social networks',
-  '<span class="command">Q or q</span>         Ask me a question',
-  '<span class="command">projects</span>       View coding projects',
-  '<span class="command">history</span>        View command history',
-  '<span class="command">help</span>           You obviously already know what this does',
-  '<span class="command">email</span>          Send an email to me',
-  '<span class="command">clear</span>          Clear terminal',
-  '<span class="command">banner</span>         Display the header',
-  '<span class="command">contact</span>        How to contact the person who made this',
-  "<br>",
-];
-
+// Banner ASCII Art
 banner = [
-  '<span class="index">Terminal by Falcon 98 Corporation. All rights reserved.</span>',
-  "<br>",
-  "      ooooooooooooooooooooooooooooooooooooo",
-  "      8                                .d88",
-  "      8  oooooooooooooooooooooooooooood8888",
-  '      8  8888888888888888888888888P"   8888    oooooooooooooooo',
-  '      8  8888888888888888888888P"      8888    8              8',
-  '      8  8888888888888888888P"         8888    8 Falcon 98 ❤️d8',
-  '      8  8888888888888888P"            8888    8  Terminal  d88',
-  '      8  8888888888888P"               8888    8           d888',
-  '      8  8888888888P"                  8888    8          d8888',
-  '      8  8888888P"                     8888    8         d88888',
-  '      8  8888P"                        8888    8        d888888',
-  "      8  8888oooooooooooooooooooooocgmm8888    8       d8888888",
-  "      8 .od88888888888888888888888888888888    8      d88888888",
-  "      8888888888888888888888888888888888888    8     d888888888",
-  "                                               8    d8888888888",
-  "         ooooooooooooooooooooooooooooooo       8   d88888888888",
-  "        d                       ...oood8b      8  d888888888888",
-  "       d              ...oood888888888888b     8 d8888888888888",
-  "      d     ...oood88888888888888888888888b    8d88888888888888",
-  "     dood8888888888888888888888888888888888b   8888888888888888",
-  "<br>",
-  '<span class="color2">Welcome to Falcon 98 Corporation\'s interactive web terminal.</span>',
-  '<span class="color2">For a list of available commands, type</span> <span class="command">\'help\'</span><span class="color2">.</span>',
-  "<br>",
+  "",
+  "  ███████╗ █████╗ ██╗      ██████╗ ██████╗ ███╗   ██╗ █████╗  █████╗ ",
+  "  ██╔════╝██╔══██╗██║     ██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗",
+  "  █████╗  ███████║██║     ██║     ██║   ██║██╔██╗ ██║╚██████║╚█████╔╝",
+  "  ██╔══╝  ██╔══██║██║     ██║     ██║   ██║██║╚██╗██║ ╚═══██║██╔══██╗",
+  "  ██║     ██║  ██║███████╗╚██████╗╚██████╔╝██║ ╚████║ █████╔╝╚█████╔╝",
+  "  ╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚════╝  ╚════╝ ",
+  "",
+  "  ╔══════════════════════════════════════════════════════════════════╗",
+  "  ║                     🚀 FALCON 98 TERMINAL                       ║",
+  "  ║              Pioneering Technology Services Provider             ║",
+  "  ╚══════════════════════════════════════════════════════════════════╝",
+  "",
+  "  🌟 Welcome to the Falcon 98 interactive web terminal!",
+  "  💻 Type 'help' to see available commands",
+  "  🔍 Use TAB for command completion",
+  "  📚 Try 'neofetch' for system information",
+  "",
 ];
 
-helpqna = [
-  "<br>",
-  '<span class="command">contact</span>          How to contact me?',
-  "<br>",
-]
+// Company Information
+whois = [
+  "",
+  "╭─────────────────────────────────────────────────────────────────╮",
+  "│                        🏢 ABOUT FALCON 98                      │",
+  "├─────────────────────────────────────────────────────────────────┤",
+  "│                                                                 │",
+  "│  Falcon 98 is a pioneering technology services provider,        │",
+  "│  dedicated to guiding businesses through the digital era.       │",
+  "│                                                                 │",
+  "│  🎯 Our Mission: Innovation + Excellence + Customer Success     │",
+  "│  🔧 Services: Custom Software, Web Development, Consulting      │",
+  "│  🌍 Vision: Empowering organizations for digital success        │",
+  "│                                                                 │",
+  "│  We seamlessly integrate cutting-edge technology with industry  │",
+  "│  expertise to deliver tailored solutions that drive growth.     │",
+  "│                                                                 │",
+  "╰─────────────────────────────────────────────────────────────────╯",
+  "",
+];
 
+// Personal Information
+whoami = [
+  "",
+  "╭─────────────────────────────────────────╮",
+  "│  🤔 The eternal question: 'Who am I?'  │",
+  "├─────────────────────────────────────────┤",
+  "│                                         │",
+  "│  The paradox is: we never truly know,  │",
+  "│  but we constantly discover ourselves   │",
+  "│  through our experiences and choices.   │",
+  "│                                         │",
+  "│  Right now, you're a curious explorer   │",
+  "│  navigating through digital space... 🚀 │",
+  "│                                         │",
+  "╰─────────────────────────────────────────╯",
+  "",
+];
+
+// About Information
+about = [
+  "",
+  "╭──────────────────────────────────────────────────────────────╮",
+  "│                      👨‍💻 ABOUT THE DEVELOPER                   │",
+  "├──────────────────────────────────────────────────────────────┤",
+  "│                                                              │",
+  "│  Name: Ashen Wijesingha                                      │",
+  "│  Role: Founder & Lead Developer at Falcon 98                │",
+  "│  Location: Sri Lanka 🇱🇰                                     │",
+  "│                                                              │",
+  "│  Passionate about creating innovative digital solutions      │",
+  "│  that make a real difference in people's lives and          │",
+  "│  businesses. Always learning, always building.              │",
+  "│                                                              │",
+  "╰──────────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Skills Information
+skills = [
+  "",
+  "╭─────────────────────────────────────────────────────────────╮",
+  "│                      🛠️  TECHNICAL SKILLS                   │",
+  "├─────────────────────────────────────────────────────────────┤",
+  "│                                                             │",
+  "│  💻 Programming Languages:                                  │",
+  "│     • JavaScript/TypeScript  • Python  • Java             │",
+  "│     • HTML/CSS              • PHP      • C++              │",
+  "│                                                             │",
+  "│  🌐 Web Technologies:                                       │",
+  "│     • React/Next.js         • Node.js  • Express          │",
+  "│     • Vue.js               • Angular   • REST APIs        │",
+  "│                                                             │",
+  "│  🗄️  Databases:                                             │",
+  "│     • MongoDB              • MySQL     • PostgreSQL       │",
+  "│                                                             │",
+  "│  ☁️  Cloud & DevOps:                                        │",
+  "│     • AWS                  • Docker    • CI/CD            │",
+  "│                                                             │",
+  "╰─────────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Experience Information
+experience = [
+  "",
+  "╭────────────────────────────────────────────────────────────╮",
+  "│                    💼 PROFESSIONAL EXPERIENCE              │",
+  "├────────────────────────────────────────────────────────────┤",
+  "│                                                            │",
+  "│  🚀 Falcon 98 Corporation                                 │",
+  "│     Founder & CEO                           2020 - Present │",
+  "│     • Founded and scaled technology services company      │",
+  "│     • Led development of 50+ web applications             │",
+  "│     • Managed teams of 5+ developers                      │",
+  "│                                                            │",
+  "│  💡 Freelance Developer                                    │",
+  "│     Full-Stack Developer                    2018 - 2020    │",
+  "│     • Delivered custom solutions for 30+ clients          │",
+  "│     • Specialized in e-commerce and business automation    │",
+  "│                                                            │",
+  "╰────────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Education Information
+education = [
+  "",
+  "╭─────────────────────────────────────────────────────────╮",
+  "│                    🎓 EDUCATION                         │",
+  "├─────────────────────────────────────────────────────────┤",
+  "│                                                         │",
+  "│  🏫 Computer Science & Engineering                      │",
+  "│     Bachelor's Degree                     2016 - 2020   │",
+  "│     • Focus on Software Engineering                     │",
+  "│     • Graduated with First Class Honors                │",
+  "│                                                         │",
+  "│  📚 Continuous Learning:                                │",
+  "│     • AWS Certified Solutions Architect                │",
+  "│     • Google Cloud Professional Developer              │",
+  "│     • Multiple online certifications in latest tech    │",
+  "│                                                         │",
+  "╰─────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Projects Information
+projects = [
+  "",
+  "╭───────────────────────────────────────────────────────────────╮",
+  "│                      🔧 FEATURED PROJECTS                    │",
+  "├───────────────────────────────────────────────────────────────┤",
+  "│                                                               │",
+  "│  🎯 QR Code Generator                                        │",
+  '│     Advanced QR code creation tool                           │',
+  '│     → <a href="' + qr + '" target="_blank">Try it out</a>                                   │',
+  "│                                                               │",
+  "│  💼 E-Commerce Platforms                                     │",
+  "│     Custom online stores with payment integration            │",
+  "│     → Multiple successful deployments                        │",
+  "│                                                               │",
+  "│  🤖 Business Automation Tools                               │",
+  "│     Workflow automation and process optimization             │",
+  "│     → Improved efficiency by 70%+ for clients               │",
+  "│                                                               │",
+  "│  🌐 Web Terminal (This!)                                    │",
+  "│     Interactive web-based terminal interface                │",
+  "│     → You're using it right now! 😊                        │",
+  "│                                                               │",
+  "╰───────────────────────────────────────────────────────────────╯",
+  "",
+  "💡 Most projects are private/confidential, but feel free to contact me to discuss!",
+  "",
+];
+
+// Social Links
+social = [
+  "",
+  "╭─────────────────────────────────────────────────────╮",
+  "│                🌐 SOCIAL & PROFESSIONAL            │",
+  "├─────────────────────────────────────────────────────┤",
+  "│                                                     │",
+  '│  🔗 Website      <a href="' + website + '" target="_blank">falcon98.com</a>                      │',
+  '│  💼 LinkedIn     <a href="' + linkedin + '" target="_blank">linkedin.com/in/ashen-wijesingha</a>  │',
+  '│  🐙 GitHub       <a href="' + github + '" target="_blank">github.com/Falcon-98</a>                │',
+  '│  📸 Instagram    <a href="' + instagram + '" target="_blank">@ashen_wijesingha</a>                 │',
+  "│  📺 YouTube      Coming soon! 📹                   │",
+  "│  🐦 Twitter      Coming soon! 🐦                   │",
+  "│                                                     │",
+  "╰─────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Contact Information
 contact = [
-  "<br>",
-  "Contact me via:",
-  'facebook       <a href="' + pfacebook + '" target="_blank">facebook/AshenWijesingha' + '</a>',
-  'linkedin       <a href="' + plinkedin + '" target="_blank">linkedin/AshenWijesingha' + "</a>",
-  'instagram      <a href="' + pinstagram + '" target="_blank">instagram/AshenWijesingha' + '</a>',
-  'github         <a href="' + pgithub + '" target="_blank">github/AshenWijesingha' + "</a>",
-  'website        <a href="' + pwebsite + '" target="_blank">ashenwijesingha.github.io' + "</a>",
-  'email          <a href="' + pemail + '" target="_blank">inbox.ashen@gmail.com' + "</a>",
-  'contact        <a href="' + pcontact + '" target="_blank">+94 78 446 4128' + "</a>",
-  "<br>",
-]
+  "",
+  "╭─────────────────────────────────────────────────────────╮",
+  "│                  📞 GET IN TOUCH                        │",
+  "├─────────────────────────────────────────────────────────┤",
+  "│                                                         │",
+  "│  Business Inquiries:                                    │",
+  '│  📧 Email:    <a href="' + email + '">terminal@falcon98.com</a>              │',
+  "│  🌐 Website:  falcon98.com                             │",
+  "│                                                         │",
+  "│  Personal Contact:                                      │",
+  '│  📧 Email:    <a href="' + pemail + '">inbox.ashen@gmail.com</a>            │',
+  '│  📱 Phone:    <a href="' + pcontact + '">+94 78 446 4128</a>                    │',
+  '│  💼 LinkedIn: <a href="' + plinkedin + '" target="_blank">ashen-wijesingha</a>                     │',
+  '│  🐙 GitHub:   <a href="' + pgithub + '" target="_blank">AshenWijesingha</a>                       │',
+  "│                                                         │",
+  "│  🕒 Response Time: Usually within 24 hours             │",
+  "│  🌍 Timezone: GMT+5:30 (Sri Lanka)                     │",
+  "│                                                         │",
+  "╰─────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Secret Information
+secret = [
+  "",
+  "╭─────────────────────────────────────────────────────────╮",
+  "│                🎉 ACCESS GRANTED! 🎉                   │",
+  "├─────────────────────────────────────────────────────────┤",
+  "│                                                         │",
+  "│  🎊 Congratulations! You've unlocked the secret area!  │",
+  "│                                                         │",
+  "│  🔐 Admin Commands:                                     │",
+  "│     • matrix        - Enter the Matrix                 │",
+  "│     • neofetch      - System information              │",
+  "│     • ping          - Network diagnostics             │",
+  "│                                                         │",
+  "│  🏆 Achievement Unlocked: Terminal Master!             │",
+  "│                                                         │",
+  "│  💡 Pro tip: Try typing 'matrix' for something cool!   │",
+  "│                                                         │",
+  "╰─────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Help Commands
+help = [
+  "",
+  "╭─────────────────────────────────────────────────────────╮",
+  "│                    📚 AVAILABLE COMMANDS                │",
+  "├─────────────────────────────────────────────────────────┤",
+  "│                                                         │",
+  "│  Information Commands:                                  │",
+  "│    help          Show this help message                │",
+  "│    whois         About Falcon 98 company               │",
+  "│    about         About the developer                   │",
+  "│    skills        Technical skills & expertise          │",
+  "│    experience    Professional background               │",
+  "│    education     Educational qualifications            │",
+  "│    whoami        Philosophical question... 🤔          │",
+  "│                                                         │",
+  "│  Portfolio & Contact:                                   │",
+  "│    projects      View featured projects                │",
+  "│    social        Social media links                    │",
+  "│    contact       Contact information                   │",
+  "│                                                         │",
+  "│  System Commands:                                       │",
+  "│    clear         Clear terminal screen                 │",
+  "│    history       Show command history                  │",
+  "│    banner        Display welcome banner                │",
+  "│    secret        🔐 Try to find the password...        │",
+  "│                                                         │",
+  "│  💡 Tips:                                               │",
+  "│    • Use TAB for command completion                     │",
+  "│    • Use UP/DOWN arrows for history                     │",
+  "│    • Try 'help --all' for advanced commands            │",
+  "│                                                         │",
+  "╰─────────────────────────────────────────────────────────╯",
+  "",
+];
+
+// Advanced Help
+advancedHelp = [
+  "",
+  "╭─────────────────────────────────────────────────────────╮",
+  "│                  🔧 ADVANCED COMMANDS                   │",
+  "├─────────────────────────────────────────────────────────┤",
+  "│                                                         │",
+  "│  System Information:                                    │",
+  "│    neofetch      Display system information            │",
+  "│    date          Show current date and time            │",
+  "│    uptime        Show system uptime                    │",
+  "│    pwd           Show current directory                │",
+  "│    ls            List directory contents               │",
+  "│    uname         Show system name                      │",
+  "│                                                         │",
+  "│  Network Commands:                                      │",
+  "│    ping [host]   Ping a server (try: ping falcon98.com)│",
+  "│                                                         │",
+  "│  Utility Commands:                                      │",
+  "│    echo [text]   Display text                          │",
+  "│    man [cmd]     Show manual for command               │",
+  "│                                                         │",
+  "│  Fun Commands:                                          │",
+  "│    matrix        Enter the Matrix... 😎                │",
+  "│                                                         │",
+  "│  Quick Links:                                           │",
+  "│    github        Open GitHub profile                   │",
+  "│    linkedin      Open LinkedIn profile                 │",
+  "│    website       Open main website                     │",
+  "│    email         Open email client                     │",
+  "│    qr            Open QR Code Generator                │",
+  "│                                                         │",
+  "╰─────────────────────────────────────────────────────────╯",
+  "",
+];

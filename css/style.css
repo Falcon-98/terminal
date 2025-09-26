@@ -1,249 +1,296 @@
-body {
+/* Terminal Window Styling */
+* {
   margin: 0;
-  padding: 2vw;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d1117;
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  color: #58a6ff;
   min-height: 100vh;
-  color: #519975;
-  background: rgb(3, 0, 17);
-  font-family: cursor, monospace;
-  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-h1 {
-  font-size: 4vw;
-  /* Adjust the font size for the banner section */
-}
-
-img {
-  max-width: 20rem;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-
-@media screen and (min-width: 767px) {
-  img {
-    width: 15rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  img {
-    width: 20rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    padding: 5vw;
-  }
-
-  .glass-container {
-    border-radius: 0;
-    /* Remove border-radius for smaller screens */
-  }
-
-  .glass-container::before {
-    border-radius: 0;
-    /* Remove border-radius for pseudo-element */
-  }
-
-  h1 {
-    font-size: 6vw;
-    /* Adjust font size for smaller screens */
-  }
-}
-
-::selection {
-  color: #211830;
-  background-color: #519975;
-}
-
-::-moz-selection {
-  color: #211830;
-  background-color: #519975;
-}
-
-.text-container {
-  max-width: 800px;
-}
-
-/* Responsive styles */
-@media only screen and (max-width: 600px) {
-  .text-container {
-    padding: 10px;
-  }
-}
-
-textarea {
-  left: -1000px;
-  position: absolute;
-}
-
-b {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Cursor Start */
-.cursor {
-  font-size: 12px;
-  color: #73ABAD;
-  background-color: #73ABAD;
-  position: relative;
-  opacity: 1;
-  height: 1.5em;
-  width: 10px;
-  max-width: 10px;
-  transform: translateY(4px);
+  padding: 20px;
   overflow: hidden;
-  text-indent: -5px;
-  display: inline-block;
-  text-decoration: blink;
-  animation: blinker 1s linear infinite;
 }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
-#command {
-  cursor: text;
-  height: 50px;
-  color: #73ABAD;
-}
-
-@media screen and (max-width: 767px) {
-
-  /* Styles for screens smaller than 768px (common for mobile devices) */
-  #terminal,
-  #command {
-    display: none;
-    /* Hide the terminal and command elements on small screens */
-  }
-
-  #mobileMessage {
-    display: block;
-    /* Show the mobile message on small screens */
-  }
-
-  #desktopMessage {
-    display: none;
-    /* Hide the desktop message on small screens */
-  }
-}
-
-@media screen and (min-width: 768px) {
-
-  /* Styles for screens 768px and larger (desktop computers) */
-  #mobileMessage {
-    display: none;
-    /* Hide the mobile message on larger screens */
-  }
-}
-
-#desktopMessage {
-  display: block;
-  /* Show the desktop message on larger screens */
-}
-
-#liner {
-  line-height: 1.3em;
-  margin-top: -2px;
-  animation: show 0.5s ease forwards;
-  animation-delay: 1.2s;
-  opacity: 0;
-}
-
-#liner::before {
-  color: #519975;
-  content: "visitor@falcon98.com:~$";
-}
-
-#liner.password::before {
-  content: "Password:";
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* Cursor End */
-p {
-  display: block;
-  line-height: 1.3em;
-  margin: 0;
+/* Terminal Window Container */
+.terminal-window {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: 90vw;
+  max-width: 1200px;
+  height: 80vh;
+  max-height: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  white-space: nowrap;
-  margin: 0;
-  letter-spacing: 0.05em;
-  animation: typing 0.5s steps(30, end);
 }
 
-.no-animation {
-  animation: typing 0 steps(30, end);
+/* Terminal Header */
+.terminal-header {
+  background: linear-gradient(90deg, #21262d 0%, #30363d 100%);
+  padding: 12px 16px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.margin {
-  margin-left: 20px;
+.window-controls {
+  display: flex;
+  gap: 8px;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-.index {
-  color: #DCDCCC;
-}
-
-.color2 {
-  color: #B89076;
-}
-
-.command {
-  color: #73ABAD;
-  text-shadow: 0 0 5px #73ABAD;
-}
-
-.error {
-  color: #B89076;
-}
-
-.white {
-  color: #fff;
-}
-
-.inherit,
-a {
-  color: #9C8394;
-}
-
-a {
-  text-decoration: inherit;
-}
-
-a:hover {
-  background: #73ABAD;
-  color: #211830;
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-a:focus {
-  outline: 0;
+.control.close { background: #ff5f56; }
+.control.minimize { background: #ffbd2e; }
+.control.maximize { background: #27ca3f; }
+
+.terminal-title {
+  color: #f0f6fc;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #30363d;
+}
+
+.logo-section img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.logo-section h1 {
+  color: #58a6ff;
+  font-size: 16px;
+  margin: 10px 0 5px;
+  font-weight: normal;
+}
+
+.logo-section .subtitle {
+  color: #7d8590;
+  font-size: 12px;
+}
+
+/* Terminal Content */
+.terminal-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #0d1117;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Terminal Output */
+#terminal {
+  min-height: 100%;
+}
+
+.terminal-line {
+  margin: 2px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-line.banner {
+  color: #58a6ff;
+}
+
+.terminal-line.command-output {
+  color: #f0f6fc;
+}
+
+.terminal-line.error {
+  color: #ff7b72;
+}
+
+.terminal-line.success {
+  color: #7ee787;
+}
+
+.terminal-line.warning {
+  color: #ffa657;
+}
+
+/* Command Input Area */
+.input-area {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  position: relative;
+}
+
+.prompt {
+  color: #7ee787;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.command-input {
+  background: transparent;
+  border: none;
+  color: #f0f6fc;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  flex: 1;
+  caret-color: transparent;
+}
+
+.cursor {
+  background: #58a6ff;
+  color: #0d1117;
+  animation: blink 1s infinite;
+  padding: 0 1px;
+  position: absolute;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Command Display */
+#typer {
+  color: #f0f6fc;
+}
+
+/* Links */
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #79c0ff;
+  text-decoration: underline;
+}
+
+/* Selection */
+::selection {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+::-moz-selection {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+/* Hide textarea */
+textarea {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .terminal-window {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    max-width: none;
+    max-height: none;
+  }
+
+  .terminal-content {
+    font-size: 12px;
+  }
+
+  .logo-section {
+    padding: 15px;
+  }
+
+  .logo-section img {
+    max-width: 80px;
+  }
+
+  .logo-section h1 {
+    font-size: 14px;
+  }
+
+  .logo-section .subtitle {
+    font-size: 11px;
+  }
+}
+
+/* Mobile Message */
+.mobile-message {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  color: #ffa657;
+}
+
+@media (max-width: 600px) {
+  .mobile-message {
+    display: block;
+  }
+
+  .terminal-content {
+    display: none;
+  }
+}
+
+/* Animation for typing effect */
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 0.5s steps(30) forwards;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Color classes for different text types */
+.color-primary { color: #58a6ff; }
+.color-secondary { color: #7d8590; }
+.color-success { color: #7ee787; }
+.color-error { color: #ff7b72; }
+.color-warning { color: #ffa657; }
+.color-white { color: #f0f6fc; }
+.color-cyan { color: #39d353; }
+.color-yellow { color: #f2cc60; }
+
+/* Scrollbar Styling */
+.terminal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
 }
