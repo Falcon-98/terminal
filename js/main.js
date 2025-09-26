@@ -17,6 +17,16 @@ function initTerminal() {
   if (isInitialized) return;
   isInitialized = true;
 
+  // Input event for real-time typing feedback
+  if (textarea) {
+    textarea.addEventListener("input", function() {
+      if (!pw) {
+        command.innerHTML = textarea.value;
+        updateCursor();
+      }
+    });
+  }
+
   setTimeout(function() {
     displayBanner();
     textarea.focus();
@@ -33,6 +43,13 @@ if (document.readyState === 'loading') {
 
 // Event listeners
 window.addEventListener("keyup", handleKeyPress);
+window.addEventListener("keydown", function(e) {
+  // Prevent default for special keys
+  if (e.keyCode === 9) { // Tab
+    e.preventDefault();
+  }
+});
+
 document.addEventListener("click", function() {
   textarea.focus();
 });
@@ -99,6 +116,12 @@ function handleCommandMode(e) {
   } else if (e.keyCode === 9) { // Tab
     e.preventDefault();
     handleTabCompletion();
+  } else {
+    // Update command display for regular typing
+    setTimeout(function() {
+      command.innerHTML = textarea.value;
+      updateCursor();
+    }, 10);
   }
 }
 
@@ -166,6 +189,10 @@ function processCommand(cmd) {
     case "education":
     case "edu":
       displayLines(education, "color-cyan", 60);
+      break;
+    case "leadership":
+    case "achievements":
+      displayLines(leadership, "color-warning", 60);
       break;
     case "projects":
     case "portfolio":
@@ -380,8 +407,8 @@ function handleTabCompletion() {
   const currentInput = textarea.value;
   const availableCommands = [
     "help", "whois", "whoami", "about", "skills", "experience", "education",
-    "projects", "social", "contact", "clear", "history", "banner", "github",
-    "linkedin", "website", "email", "date", "pwd", "ls", "neofetch", "matrix"
+    "leadership", "projects", "social", "contact", "clear", "history", "banner",
+    "github", "linkedin", "website", "email", "date", "pwd", "ls", "neofetch", "matrix"
   ];
 
   const matches = availableCommands.filter(cmd => cmd.startsWith(currentInput));
