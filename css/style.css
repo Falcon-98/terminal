@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
 }
 
@@ -22,10 +22,10 @@ body {
   background: #161b22;
   border: 1px solid #30363d;
   border-radius: 8px;
-  width: 90vw;
-  max-width: 1200px;
-  height: 80vh;
-  max-height: 800px;
+  width: 95vw;
+  max-width: 1400px;
+  height: 90vh;
+  max-height: 1000px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -67,26 +67,26 @@ body {
 /* Logo Section */
 .logo-section {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid #30363d;
 }
 
 .logo-section img {
-  max-width: 120px;
+  max-width: 60px;
   height: auto;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .logo-section h1 {
   color: #58a6ff;
-  font-size: 16px;
-  margin: 10px 0 5px;
+  font-size: 14px;
+  margin: 5px 0 3px;
   font-weight: normal;
 }
 
 .logo-section .subtitle {
   color: #7d8590;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* Terminal Content */
@@ -221,19 +221,19 @@ textarea {
   }
 
   .logo-section {
-    padding: 15px;
+    padding: 8px;
   }
 
   .logo-section img {
-    max-width: 80px;
+    max-width: 50px;
   }
 
   .logo-section h1 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .logo-section .subtitle {
-    font-size: 11px;
+    font-size: 9px;
   }
 }
 
