@@ -11,7 +11,6 @@ function init() {
 }
 
 function nl2br(txt) {
-//   return txt.replace(//g, '');
   return txt.value.replace(/\s/g, "");
 }
 

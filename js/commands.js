@@ -126,7 +126,7 @@ contact = [
   'linkedin       <a href="' + plinkedin + '" target="_blank">linkedin/AshenWijesingha' + "</a>",
   'instagram      <a href="' + pinstagram + '" target="_blank">instagram/AshenWijesingha' + '</a>',
   'github         <a href="' + pgithub + '" target="_blank">github/AshenWijesingha' + "</a>",
-  'website        <a href="' + pwebsite + '" target="_blank">ashenwijesingh.github.io' + "</a>",
+  'website        <a href="' + pwebsite + '" target="_blank">ashenwijesingha.github.io' + "</a>",
   'email          <a href="' + pemail + '" target="_blank">inbox.ashen@gmail.com' + "</a>",
   'contact        <a href="' + pcontact + '" target="_blank">+94 78 446 4128' + "</a>",
   "<br>",

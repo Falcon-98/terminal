@@ -78,9 +78,9 @@ function enterKey(e) {
 }
 
 function commander(cmd) {
-    
+
     console.log("Before: ", cmd);
-    cmd = cmdcmd.replace(/\s/g, "");
+    cmd = cmd.replace(/\s/g, "");
     console.log("After: ", cmd);
   
   switch (cmd.toLowerCase()) {
@@ -216,7 +216,16 @@ function commander(cmd) {
 
 function newTab(link) {
   setTimeout(function() {
-    window.open(link, "_blank");
+    try {
+      if (link && link !== "#") {
+        window.open(link, "_blank");
+      } else {
+        addLine("Link not available yet.", "error", 0);
+      }
+    } catch (error) {
+      addLine("Error opening link.", "error", 0);
+      console.error("Error opening link:", error);
+    }
   }, 500);
 }
 
