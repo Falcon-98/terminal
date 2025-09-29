@@ -1,3 +1,5 @@
+const { useCallback } = require("react");
+
 // Social Links and Contact Information
 var youtube = "#";
 var twitter = "#";
@@ -217,6 +219,11 @@ education = [
   "================================================================",
   "                         🎓 EDUCATION                          ",
   "================================================================",
+  "",
+  "  🏫 University of Colombo School of Computing (UCSC)",
+  "     Bachelor of Information Technology (BIT)  2019 - 2025",
+  "     • Specialization in Software Development",
+  "     • Research in Software Engineering and Development",
   "",
   "  🏛️  Harvard University",
   "     Advanced Studies in Computer Science  2023 - Present",
