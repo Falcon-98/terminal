@@ -108,6 +108,19 @@ function alert(txt) {
 function handleSpecialKeys(e) {
   var keyCode = e.keyCode || e.which;
 
+  // Ctrl+Shift+C - Copy selected text
+  if (e.ctrlKey && e.shiftKey && keyCode === 67) {
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) {
+      navigator.clipboard.writeText(selection.toString()).then(function() {
+        console.log('📋 Text copied to clipboard');
+      }).catch(function(err) {
+        console.error('Failed to copy text:', err);
+      });
+    }
+    return;
+  }
+
   switch(keyCode) {
     case 27: // Escape
       if (textarea) textarea.value = '';
@@ -141,8 +154,15 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Prevent context menu on right click (more terminal-like)
+// Allow right-click context menu for copying text
 document.addEventListener('contextmenu', function(e) {
+  // Allow default context menu for text selection (copy functionality)
+  const selection = window.getSelection();
+  if (selection && selection.toString().length > 0) {
+    // Allow copy when text is selected - don't prevent default
+    return;
+  }
+  // Otherwise focus terminal
   e.preventDefault();
   focusTerminal();
 });

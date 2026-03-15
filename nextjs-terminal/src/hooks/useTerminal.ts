@@ -103,10 +103,13 @@ export function useTerminal() {
     }
   }, []);
 
-  // Scroll to bottom
+  // Scroll to bottom with smooth animation
   const scrollToBottom = useCallback(() => {
     if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+      terminalRef.current.scrollTo({
+        top: terminalRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   }, []);
 
@@ -477,6 +480,27 @@ export function useTerminal() {
   // Handle key press
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      // Ctrl+C - Cancel/clear current input
+      if (e.ctrlKey && e.key === "c") {
+        e.preventDefault();
+        if (currentInput.trim() !== '') {
+          addLine(`visitor@falcon98:~$ ${currentInput}^C`, "text-[#7d8590]", 0);
+        }
+        setCurrentInput("");
+        if (isPasswordMode) {
+          setIsPasswordMode(false);
+          setPrompt("visitor@falcon98:~$");
+        }
+        return;
+      }
+      
+      // Ctrl+L - Clear screen
+      if (e.ctrlKey && e.key === "l") {
+        e.preventDefault();
+        clearTerminal();
+        return;
+      }
+      
       if (e.key === "Enter") {
         e.preventDefault();
         executeCommand(currentInput);
@@ -511,7 +535,7 @@ export function useTerminal() {
         setCurrentInput("");
       }
     },
-    [currentInput, commandHistory, historyIndex, executeCommand, handleTabCompletion]
+    [currentInput, commandHistory, historyIndex, executeCommand, handleTabCompletion, addLine, clearTerminal, isPasswordMode]
   );
 
   // Handle input change

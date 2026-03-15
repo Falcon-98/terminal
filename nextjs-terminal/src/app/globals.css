@@ -69,6 +69,11 @@ body {
   background: #484f58;
 }
 
+/* Smooth scroll behavior for terminal */
+.terminal-content {
+  scroll-behavior: smooth;
+}
+
 /* Terminal line transitions */
 .terminal-line {
   animation: fadeIn 0.1s ease-in;
