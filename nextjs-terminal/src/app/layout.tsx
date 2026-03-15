@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? "/terminal" : "";
+
 export const metadata: Metadata = {
   title: "Falcon 98 Terminal",
   description:
@@ -41,9 +44,9 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: `${basePath}/logo.png`,
+    shortcut: `${basePath}/logo.png`,
+    apple: `${basePath}/logo.png`,
   },
   metadataBase: new URL("https://terminal.falcon98.com"),
 };

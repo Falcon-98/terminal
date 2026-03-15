@@ -1,7 +1,8 @@
 "use client";
 
 import { useTerminal } from "@/hooks/useTerminal";
-import Image from "next/image";
+
+const basePath = process.env.NODE_ENV === "production" ? "/terminal" : "";
 
 export function Terminal() {
   const {
@@ -39,8 +40,9 @@ export function Terminal() {
           rel="noopener noreferrer"
           className="inline-block"
         >
-          <Image
-            src="/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/logo.png`}
             alt="Falcon 98 Logo"
             width={60}
             height={60}
