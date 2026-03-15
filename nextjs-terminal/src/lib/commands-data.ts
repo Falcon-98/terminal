@@ -1,28 +1,36 @@
 // Social Links and Contact Information
-var youtube = "#";
-var twitter = "#";
-var password = "falcon98";
-var linkedin = "https://www.linkedin.com/in/ashen-wijesingha/";
-var instagram = "https://www.instagram.com/ashen_wijesingha/";
-var github = "https://github.com/Falcon-98";
-var email = 'mailto:terminal@falcon98.com';
-var website = "https://falcon98.com/";
+export const socialLinks = {
+  youtube: "#",
+  twitter: "#",
+  linkedin: "https://www.linkedin.com/in/ashen-wijesingha/",
+  instagram: "https://www.instagram.com/ashen_wijesingha/",
+  github: "https://github.com/Falcon-98",
+  email: "mailto:terminal@falcon98.com",
+  website: "https://falcon98.com/",
+};
 
 // Personal Links
-var pfacebook = "https://www.facebook.com/ashen.dilshan.96/";
-var plinkedin = "https://www.linkedin.com/in/ashen-wijesingha/";
-var pinstagram = "https://www.instagram.com/ashen_wijesingha/";
-var pgithub = "https://github.com/AshenWijesingha";
-var pemail = 'mailto:a.d.wijesingha@gmail.com';
-var pcontact = 'tel:+94784464128';
-var pwebsite = 'https://ashenwijesingha.github.io';
-var pmedium = 'https://medium.com/@a.d.wijesingha';
+export const personalLinks = {
+  facebook: "https://www.facebook.com/ashen.dilshan.96/",
+  linkedin: "https://www.linkedin.com/in/ashen-wijesingha/",
+  instagram: "https://www.instagram.com/ashen_wijesingha/",
+  github: "https://github.com/AshenWijesingha",
+  email: "mailto:a.d.wijesingha@gmail.com",
+  contact: "tel:+94784464128",
+  website: "https://ashenwijesingha.github.io",
+  medium: "https://medium.com/@a.d.wijesingha",
+};
 
 // Project Links
-var qr = "https://ashenwijesingha.github.io/QR-Code-Generator/";
+export const projectLinks = {
+  qr: "https://ashenwijesingha.github.io/QR-Code-Generator/",
+};
+
+// Password for secret command
+export const secretPassword = "falcon98";
 
 // Banner ASCII Art
-banner = [
+export const banner = [
   "",
   "  ███████╗ █████╗ ██╗      ██████╗ ██████╗ ███╗   ██╗ █████╗  █████╗ ",
   "  ██╔════╝██╔══██╗██║     ██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗",
@@ -44,7 +52,7 @@ banner = [
 ];
 
 // Company Information
-whois = [
+export const whois = [
   "",
   "================================================================",
   "                       🏢 ABOUT FALCON 98                       ",
@@ -65,7 +73,7 @@ whois = [
 ];
 
 // Personal Information
-whoami = [
+export const whoami = [
   "",
   "================================================",
   "     🤔 The eternal question: 'Who am I?'     ",
@@ -82,7 +90,7 @@ whoami = [
 ];
 
 // About Information
-about = [
+export const about = [
   "",
   "================================================================",
   "                     👨‍💻 ASHEN WIJESINGHA                       ",
@@ -107,7 +115,7 @@ about = [
 ];
 
 // Skills Information
-skills = [
+export const skills = [
   "",
   "================================================================",
   "                    🛠️  TECHNICAL EXPERTISE                     ",
@@ -175,7 +183,7 @@ skills = [
 ];
 
 // Experience Information
-experience = [
+export const experience = [
   "",
   "================================================================",
   "                  💼 PROFESSIONAL EXPERIENCE                   ",
@@ -212,7 +220,7 @@ experience = [
 ];
 
 // Education Information
-education = [
+export const education = [
   "",
   "================================================================",
   "                         🎓 EDUCATION                          ",
@@ -256,7 +264,7 @@ education = [
 ];
 
 // Leadership Information
-leadership = [
+export const leadership = [
   "",
   "================================================================",
   "                  🏆 LEADERSHIP & ACHIEVEMENTS                 ",
@@ -289,7 +297,7 @@ leadership = [
 ];
 
 // Projects Information
-projects = [
+export const projects = [
   "",
   "================================================================",
   "                      🔧 FEATURED PROJECTS                     ",
@@ -308,8 +316,8 @@ projects = [
   "     • Implemented modern web technologies and best practices",
   "",
   "  🎯 QR Code Generator",
-  '     Advanced QR code creation tool with modern UI',
-  '     → <a href="' + qr + '" target="_blank">Try it out</a>',
+  "     Advanced QR code creation tool with modern UI",
+  `     → <a href="${projectLinks.qr}" target="_blank" class="text-[#58a6ff] hover:underline">Try it out</a>`,
   "     • Built with modern web technologies",
   "     • Features dynamic QR code generation and customization",
   "",
@@ -337,41 +345,41 @@ projects = [
 ];
 
 // Social Links
-social = [
+export const social = [
   "",
   "================================================================",
   "                🌐 SOCIAL & PROFESSIONAL                       ",
   "================================================================",
   "",
-  '  🔗 Website      <a href="' + website + '" target="_blank">falcon98.com</a>',
-  '  💼 LinkedIn     <a href="' + linkedin + '" target="_blank">linkedin.com/in/ashen-wijesingha</a>',
-  '  🐙 GitHub       <a href="' + github + '" target="_blank">github.com/Falcon-98</a>',
-  '  📸 Instagram    <a href="' + instagram + '" target="_blank">@ashen_wijesingha</a>',
-  '  📝 Medium       <a href="' + pmedium + '" target="_blank">@a.d.wijesingha</a>',
+  `  🔗 Website      <a href="${socialLinks.website}" target="_blank" class="text-[#58a6ff] hover:underline">falcon98.com</a>`,
+  `  💼 LinkedIn     <a href="${socialLinks.linkedin}" target="_blank" class="text-[#58a6ff] hover:underline">linkedin.com/in/ashen-wijesingha</a>`,
+  `  🐙 GitHub       <a href="${socialLinks.github}" target="_blank" class="text-[#58a6ff] hover:underline">github.com/Falcon-98</a>`,
+  `  📸 Instagram    <a href="${socialLinks.instagram}" target="_blank" class="text-[#58a6ff] hover:underline">@ashen_wijesingha</a>`,
+  `  📝 Medium       <a href="${personalLinks.medium}" target="_blank" class="text-[#58a6ff] hover:underline">@a.d.wijesingha</a>`,
   "  📺 YouTube      Coming soon! 📹",
   "  🐦 Twitter      Coming soon! 🐦",
   "",
 ];
 
 // Contact Information
-contact = [
+export const contact = [
   "",
   "================================================================",
   "                    📞 GET IN TOUCH                           ",
   "================================================================",
   "",
   "  🏢 Business Inquiries (Falcon 98):",
-  '     📧 Email:    <a href="' + email + '">terminal@falcon98.com</a>',
+  `     📧 Email:    <a href="${socialLinks.email}" class="text-[#58a6ff] hover:underline">terminal@falcon98.com</a>`,
   "     🌐 Website:  falcon98.com",
   "     📍 Based in: Colombo, Sri Lanka",
   "",
   "  👤 Personal & Professional Contact:",
-  '     📧 Email:    <a href="' + pemail + '">a.d.wijesingha@gmail.com</a>',
-  '     📱 Phone:    <a href="' + pcontact + '">+94 78 446 4128</a>',
+  `     📧 Email:    <a href="${personalLinks.email}" class="text-[#58a6ff] hover:underline">a.d.wijesingha@gmail.com</a>`,
+  `     📱 Phone:    <a href="${personalLinks.contact}" class="text-[#58a6ff] hover:underline">+94 78 446 4128</a>`,
   "     📞 Landline: +94 11 340 1721",
-  '     💼 LinkedIn: <a href="' + plinkedin + '" target="_blank">ashen-wijesingha</a>',
-  '     🐙 GitHub:   <a href="' + pgithub + '" target="_blank">AshenWijesingha</a>',
-  '     🌐 Portfolio: <a href="' + pwebsite + '" target="_blank">ashenwijesingha.github.io</a>',
+  `     💼 LinkedIn: <a href="${personalLinks.linkedin}" target="_blank" class="text-[#58a6ff] hover:underline">ashen-wijesingha</a>`,
+  `     🐙 GitHub:   <a href="${personalLinks.github}" target="_blank" class="text-[#58a6ff] hover:underline">AshenWijesingha</a>`,
+  `     🌐 Portfolio: <a href="${personalLinks.website}" target="_blank" class="text-[#58a6ff] hover:underline">ashenwijesingha.github.io</a>`,
   "",
   "  ⏰ Availability:",
   "     🕒 Response Time: Usually within 24 hours",
@@ -388,7 +396,7 @@ contact = [
 ];
 
 // Secret Information
-secret = [
+export const secret = [
   "",
   "================================================================",
   "                     🎉 ACCESS GRANTED! 🎉                    ",
@@ -414,7 +422,7 @@ secret = [
 ];
 
 // Help Commands
-help = [
+export const help = [
   "",
   "================================================================",
   "                   📚 AVAILABLE COMMANDS                      ",
@@ -450,7 +458,7 @@ help = [
 ];
 
 // Advanced Help
-advancedHelp = [
+export const advancedHelp = [
   "",
   "================================================================",
   "                    🔧 ADVANCED COMMANDS                      ",
@@ -490,3 +498,68 @@ advancedHelp = [
   "    • Use 'contact' for all contact methods",
   "",
 ];
+
+// Available commands for tab completion
+export const availableCommands = [
+  "help",
+  "whois",
+  "whoami",
+  "about",
+  "skills",
+  "experience",
+  "education",
+  "leadership",
+  "projects",
+  "social",
+  "contact",
+  "clear",
+  "history",
+  "banner",
+  "secret",
+  "github",
+  "linkedin",
+  "website",
+  "email",
+  "date",
+  "pwd",
+  "ls",
+  "neofetch",
+  "matrix",
+  "uname",
+  "uptime",
+  "qr",
+  "youtube",
+  "twitter",
+  "instagram",
+];
+
+// Manual pages
+export const manPages: Record<string, string[]> = {
+  help: [
+    "HELP(1)",
+    "",
+    "NAME",
+    "    help - display available commands",
+    "",
+    "DESCRIPTION",
+    "    Shows list of available terminal commands",
+  ],
+  clear: [
+    "CLEAR(1)",
+    "",
+    "NAME",
+    "    clear - clear terminal screen",
+    "",
+    "DESCRIPTION",
+    "    Clears the terminal display",
+  ],
+  history: [
+    "HISTORY(1)",
+    "",
+    "NAME",
+    "    history - display command history",
+    "",
+    "DESCRIPTION",
+    "    Shows previously executed commands",
+  ],
+};

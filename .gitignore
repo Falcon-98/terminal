@@ -1,0 +1,31 @@
+# Dependencies
+nextjs-terminal/node_modules/
+node_modules/
+
+# Build outputs
+nextjs-terminal/.next/
+nextjs-terminal/out/
+nextjs-terminal/build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+*.log
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Misc
+*.pem
