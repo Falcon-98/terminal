@@ -36,18 +36,26 @@ export function useTerminal() {
   const [isPasswordMode, setIsPasswordMode] = useState<boolean>(false);
   const [prompt, setPrompt] = useState<string>("visitor@falcon98:~$");
   
-  // Use useRef for startTime to avoid impure function in useState
-  const startTimeRef = useRef<number | null>(null);
-  
-  // Initialize startTime on first render using useEffect
-  useEffect(() => {
-    if (startTimeRef.current === null) {
+  // Track start time using a ref with lazy initialization
+  const startTimeRef = useRef<number>(0);
+  const isInitializedRef = useRef<boolean>(false);
+
+  // Initialize start time lazily on first access
+  const getStartTime = useCallback(() => {
+    if (!isInitializedRef.current) {
       startTimeRef.current = Date.now();
+      isInitializedRef.current = true;
     }
+    return startTimeRef.current;
   }, []);
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
+
+  // Helper function to calculate uptime in seconds
+  const getUptimeSeconds = useCallback(() => {
+    return Math.floor((Date.now() - getStartTime()) / 1000);
+  }, [getStartTime]);
 
   // Add a single line to the terminal
   const addLine = useCallback(
@@ -137,7 +145,7 @@ export function useTerminal() {
               1024
           ) + "MB"
         : "Unknown";
-    const uptime = Math.floor((Date.now() - (startTimeRef.current || Date.now())) / 1000);
+    const uptime = getUptimeSeconds();
 
     const info = [
       "",
@@ -155,7 +163,7 @@ export function useTerminal() {
       "",
     ];
     addLines(info, "text-[#39d353]", 30);
-  }, [addLines]);
+  }, [addLines, getUptimeSeconds]);
 
   // Simulate ping
   const simulatePing = useCallback(() => {
@@ -358,7 +366,7 @@ export function useTerminal() {
           addLine("Falcon98OS 1.0.0", "text-white", 0);
           break;
         case "uptime":
-          const uptimeSecs = Math.floor((Date.now() - (startTimeRef.current || Date.now())) / 1000);
+          const uptimeSecs = getUptimeSeconds();
           addLine(
             `up ${Math.floor(uptimeSecs / 3600)}:${Math.floor((uptimeSecs % 3600) / 60)
               .toString()
@@ -396,6 +404,7 @@ export function useTerminal() {
       clearTerminal,
       commandHistory,
       displaySystemInfo,
+      getUptimeSeconds,
       openLink,
       simulatePing,
       startMatrix,
