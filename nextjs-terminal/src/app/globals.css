@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d1117;
+  --foreground: #58a6ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Courier New', Monaco, Menlo, Consolas, monospace;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+::-moz-selection {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+/* Cursor Animation */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Scrollbar Styling */
+.terminal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Terminal line transitions */
+.terminal-line {
+  animation: fadeIn 0.1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Links within terminal */
+.terminal-line a {
+  color: #58a6ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.terminal-line a:hover {
+  color: #79c0ff;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .terminal-window {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  .terminal-content {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Message */
+@media (max-width: 600px) {
+  .terminal-content {
+    display: none;
+  }
+  
+  .mobile-message {
+    display: block !important;
+  }
+}
