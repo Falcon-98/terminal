@@ -48,6 +48,24 @@ window.addEventListener("keydown", function(e) {
   if (e.keyCode === 9) { // Tab
     e.preventDefault();
   }
+  
+  // Ctrl+C - Cancel/clear current input
+  if (e.ctrlKey && e.keyCode === 67) {
+    e.preventDefault();
+    if (textarea.value.trim() !== '') {
+      addLine(`visitor@falcon98:~$ ${textarea.value}^C`, "color-secondary", 0);
+    }
+    clearInput();
+    if (pw) {
+      exitPasswordMode();
+    }
+  }
+  
+  // Ctrl+L - Clear screen
+  if (e.ctrlKey && e.keyCode === 76) {
+    e.preventDefault();
+    clearTerminal();
+  }
 });
 
 document.addEventListener("click", function() {
@@ -441,8 +459,19 @@ function addLine(text, className, delay) {
     line.className = `terminal-line ${className}`;
     line.innerHTML = text;
     before.parentNode.insertBefore(line, before);
-    terminal.scrollTop = terminal.scrollHeight;
+    // Smooth scroll to bottom like a real terminal
+    scrollToBottom();
   }, delay);
+}
+
+// Smooth scroll to bottom of terminal
+function scrollToBottom() {
+  if (terminal) {
+    terminal.scrollTo({
+      top: terminal.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
 }
 
 function displayLines(lines, className, delay) {

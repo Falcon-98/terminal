@@ -1,6 +1,7 @@
 "use client";
 
 import { useTerminal } from "@/hooks/useTerminal";
+import { useCallback, useEffect } from "react";
 
 const basePath = process.env.NODE_ENV === "production" ? "/terminal" : "";
 
@@ -16,6 +17,37 @@ export function Terminal() {
     focusInput,
     getDisplayInput,
   } = useTerminal();
+
+  // Handle Ctrl+Shift+C for copy
+  const handleCopy = useCallback((e: KeyboardEvent) => {
+    if (e.ctrlKey && e.shiftKey && e.key === "C") {
+      const selection = window.getSelection();
+      if (selection && selection.toString().length > 0) {
+        navigator.clipboard.writeText(selection.toString()).then(() => {
+          console.log("📋 Text copied to clipboard");
+        }).catch((err) => {
+          console.error("Failed to copy text:", err);
+        });
+      }
+    }
+  }, []);
+
+  // Add global keyboard listener for copy
+  useEffect(() => {
+    window.addEventListener("keydown", handleCopy);
+    return () => window.removeEventListener("keydown", handleCopy);
+  }, [handleCopy]);
+
+  // Handle context menu - allow if text is selected
+  const handleContextMenu = useCallback((e: React.MouseEvent) => {
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) {
+      // Allow default context menu for copying
+      return;
+    }
+    e.preventDefault();
+    focusInput();
+  }, [focusInput]);
 
   return (
     <div className="terminal-window bg-[#161b22] border border-[#30363d] rounded-lg w-[95vw] max-w-[1400px] h-[90vh] max-h-[1000px] shadow-2xl flex flex-col overflow-hidden">
@@ -68,6 +100,7 @@ export function Terminal() {
         ref={terminalRef}
         className="terminal-content flex-1 p-4 overflow-y-auto bg-[#0d1117] text-base leading-relaxed max-[600px]:hidden"
         onClick={focusInput}
+        onContextMenu={handleContextMenu}
       >
         {/* Terminal Output */}
         <div id="terminal" className="min-h-full">
