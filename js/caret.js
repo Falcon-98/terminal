@@ -159,8 +159,8 @@ document.addEventListener('contextmenu', function(e) {
   // Allow default context menu for text selection (copy functionality)
   const selection = window.getSelection();
   if (selection && selection.toString().length > 0) {
-    // Allow copy when text is selected
-    return true;
+    // Allow copy when text is selected - don't prevent default
+    return;
   }
   // Otherwise focus terminal
   e.preventDefault();

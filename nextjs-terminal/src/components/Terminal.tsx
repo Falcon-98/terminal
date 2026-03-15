@@ -20,7 +20,7 @@ export function Terminal() {
 
   // Handle Ctrl+Shift+C for copy
   const handleCopy = useCallback((e: KeyboardEvent) => {
-    if (e.ctrlKey && e.shiftKey && e.key === "C") {
+    if (e.ctrlKey && e.shiftKey && (e.key === "C" || e.key === "c")) {
       const selection = window.getSelection();
       if (selection && selection.toString().length > 0) {
         navigator.clipboard.writeText(selection.toString()).then(() => {
